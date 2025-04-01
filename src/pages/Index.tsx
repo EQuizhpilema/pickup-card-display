@@ -1,11 +1,86 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React from "react";
+import PickupCard from "@/components/PickupCard";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-gray-100">
+      <header className="bg-white border-b">
+        <div className="max-w-4xl mx-auto py-4 px-4 sm:px-6">
+          <h1 className="text-xl font-semibold text-center text-gray-800">Pickup Details</h1>
+        </div>
+      </header>
+
+      <div className="max-w-4xl mx-auto py-6 px-4 sm:px-6">
+        <PickupCard
+          type="pickup"
+          id="PU12716"
+          location={{
+            title: "Ossining High School - SBHC",
+            address1: "29 S Highland Ave",
+            address2: "",
+            city: "Ossining",
+            state: "NY",
+            zip: "10562"
+          }}
+          time={{
+            date: "03/21/25",
+            startTime: "10:00",
+            endTime: "11:30"
+          }}
+          contact={{
+            name: "Mrs. Glick",
+            phone: "(914) 923-4740"
+          }}
+          shipmentDetails={{
+            units: 2,
+            weight: 250,
+            specialInstructions: "-"
+          }}
+        />
+        
+        <div className="flex justify-center my-4">
+          <Button 
+            variant="secondary" 
+            className="bg-blue-600 text-white hover:bg-blue-700 rounded-full px-6 py-2"
+          >
+            <span className="mr-2">Subscribe to alerts</span>
+          </Button>
+        </div>
+        
+        <PickupCard
+          type="delivery"
+          destination="Christie's New York"
+          location={{
+            title: "Christie's New York",
+            address1: "20 Rockefeller Plaza",
+            address2: "",
+            city: "New York",
+            state: "NY",
+            zip: "10020"
+          }}
+          contact={{
+            name: "",
+            phone: "(212) 636-2000"
+          }}
+          shipmentDetails={{
+            handlingUnits: 2,
+            weight: 250,
+            freightDescription: "Crate",
+            deliveryService: "Guaranteed service"
+          }}
+        />
+        
+        <div className="flex justify-center mt-6">
+          <Button 
+            variant="primary" 
+            className="bg-blue-600 text-white hover:bg-blue-700 rounded-full px-6 py-2"
+          >
+            Enter another pickup <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
+        </div>
       </div>
     </div>
   );
