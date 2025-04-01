@@ -1,5 +1,5 @@
 import React from "react";
-import { Clock, MapPin, User, Phone, Package, Info } from "lucide-react";
+import { Clock, MapPin, User, Phone, Package } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -123,56 +123,52 @@ const PickupCard: React.FC<PickupCardProps> = ({
           </div>
 
           <div className="space-y-2">
-            <div className="flex items-start">
-              <Info className="mr-2 h-5 w-5 text-gray-500 mt-0.5" />
-              <div>
-                <div className="font-medium">Shipment details</div>
-                <div className="text-sm space-y-1">
-                  {shipmentDetails.units && (
-                    <div>
-                      <span className="font-medium">Total units:</span> {shipmentDetails.units}
-                    </div>
-                  )}
-                  {shipmentDetails.handlingUnits && (
-                    <div>
-                      <span className="font-medium">Handling units:</span> {shipmentDetails.handlingUnits}
-                    </div>
-                  )}
-                  {shipmentDetails.weight && (
-                    <div>
-                      <span className={cn("font-medium", type === "delivery" && "")}>
-                        {type === "pickup" ? "Total weight" : "Weight"}:
-                      </span>{" "}
-                      {shipmentDetails.weight}
-                    </div>
-                  )}
-                  {shipmentDetails.freightDescription && (
-                    <div>
-                      <span className="font-medium">Freight description:</span>{" "}
-                      {shipmentDetails.freightDescription}
-                    </div>
-                  )}
-                  {shipmentDetails.combinedDeliveriesNote && (
-                    <div>
-                      <span className="font-medium">Combined deliveries:</span>{" "}
-                      {shipmentDetails.combinedDeliveriesNote}
-                    </div>
-                  )}
-                  {shipmentDetails.specialInstructions && (
-                    <div>
-                      <span className="font-medium">Special pickup instructions:</span>{" "}
-                      {shipmentDetails.specialInstructions}
-                    </div>
-                  )}
-                  {shipmentDetails.deliveryService && (
-                    <div>
-                      <span className="font-medium">Delivery service:</span>{" "}
-                      <span className="uppercase text-green-600 font-medium">
-                        {shipmentDetails.deliveryService}
-                      </span>
-                    </div>
-                  )}
-                </div>
+            <div>
+              <div className="font-medium">Shipment details</div>
+              <div className="text-sm space-y-1">
+                {shipmentDetails.units && (
+                  <div>
+                    <span className="font-medium">Total units:</span> {shipmentDetails.units}
+                  </div>
+                )}
+                {shipmentDetails.handlingUnits && (
+                  <div>
+                    <span className="font-medium">Handling units:</span> {shipmentDetails.handlingUnits}
+                  </div>
+                )}
+                {shipmentDetails.weight && (
+                  <div>
+                    <span className={cn("font-medium", type === "delivery" && "")}>
+                      {type === "pickup" ? "Total weight" : "Weight"}:
+                    </span>{" "}
+                    {shipmentDetails.weight}
+                  </div>
+                )}
+                {shipmentDetails.freightDescription && (
+                  <div>
+                    <span className="font-medium">Freight description:</span>{" "}
+                    {shipmentDetails.freightDescription}
+                  </div>
+                )}
+                {shipmentDetails.combinedDeliveriesNote && (
+                  <div>
+                    {shipmentDetails.combinedDeliveriesNote}
+                  </div>
+                )}
+                {shipmentDetails.specialInstructions && (
+                  <div>
+                    <span className="font-medium">Special pickup instructions:</span>{" "}
+                    {shipmentDetails.specialInstructions}
+                  </div>
+                )}
+                {shipmentDetails.deliveryService && (
+                  <div>
+                    <span className="font-medium">Delivery service:</span>{" "}
+                    <span className="uppercase text-green-600 font-medium">
+                      {shipmentDetails.deliveryService}
+                    </span>
+                  </div>
+                )}
               </div>
             </div>
           </div>
