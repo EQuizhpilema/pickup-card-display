@@ -5,6 +5,10 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 const Index = () => {
+  // Calculate totals from all deliveries
+  const totalHandlingUnits = 2 + 1 + 3; // Christie's + Sotheby's + Phillips
+  const totalWeight = 250 + 175 + 320; // Christie's + Sotheby's + Phillips
+
   return (
     <div className="min-h-screen bg-gray-100">
       <header className="bg-white border-b">
@@ -35,9 +39,9 @@ const Index = () => {
             phone: "(914) 923-4740"
           }}
           shipmentDetails={{
-            units: 2,
-            weight: 250,
-            specialInstructions: "-"
+            units: totalHandlingUnits,
+            weight: totalWeight,
+            specialInstructions: "Combined deliveries to Christie's, Sotheby's, and Phillips"
           }}
         />
         
