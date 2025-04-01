@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Clock, MapPin, User, Phone, Package } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -155,9 +156,9 @@ const PickupCard: React.FC<PickupCardProps> = ({
                     {shipmentDetails.combinedDeliveriesNote}
                   </div>
                 )}
+                <div className="font-bold mt-2">Special Pickup Instructions</div>
                 {shipmentDetails.specialInstructions && (
                   <div>
-                    <span className="font-medium">Special pickup instructions:</span>{" "}
                     {shipmentDetails.specialInstructions}
                   </div>
                 )}
