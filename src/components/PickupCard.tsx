@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Clock, MapPin, User, Phone, Package, Info } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -113,20 +112,7 @@ const PickupCard: React.FC<PickupCardProps> = ({
             </div>
 
             {type === "pickup" && (
-              <Button
-                variant="outline"
-                className="bg-blue-50 text-blue-700 hover:bg-blue-100 border-blue-200 text-sm"
-              >
-                <Phone className="mr-2 h-4 w-4" /> Add to address book
-              </Button>
-            )}
-          </div>
-
-          <div className="space-y-2">
-            <div className="flex items-start">
-              <Info className="mr-2 h-5 w-5 text-gray-500 mt-0.5" />
-              <div>
-                <div className="font-medium">Shipment details</div>
+              <div className="space-y-2">
                 <div className="text-sm space-y-1">
                   {shipmentDetails.units && (
                     <div>
@@ -140,16 +126,7 @@ const PickupCard: React.FC<PickupCardProps> = ({
                   )}
                   {shipmentDetails.weight && (
                     <div>
-                      <span className={cn("font-medium", type === "delivery" && "")}>
-                        {type === "pickup" ? "Total weight" : "Weight"}:
-                      </span>{" "}
-                      {shipmentDetails.weight}
-                    </div>
-                  )}
-                  {shipmentDetails.freightDescription && (
-                    <div>
-                      <span className="font-medium">Freight description:</span>{" "}
-                      {shipmentDetails.freightDescription}
+                      <span className="font-medium">Total weight:</span> {shipmentDetails.weight}
                     </div>
                   )}
                   {shipmentDetails.specialInstructions && (
@@ -158,17 +135,47 @@ const PickupCard: React.FC<PickupCardProps> = ({
                       {shipmentDetails.specialInstructions}
                     </div>
                   )}
-                  {shipmentDetails.deliveryService && (
-                    <div>
-                      <span className="font-medium">Delivery service:</span>{" "}
-                      <span className="uppercase text-green-600 font-medium">
-                        {shipmentDetails.deliveryService}
-                      </span>
-                    </div>
-                  )}
                 </div>
+
+                <Button
+                  variant="secondary" 
+                  className="bg-blue-600 text-white hover:bg-blue-700 rounded-full px-6 py-2 w-full"
+                >
+                  <span className="mr-2">Subscribe to alerts</span>
+                </Button>
               </div>
-            </div>
+            )}
+          </div>
+
+          <div className="space-y-2">
+            {type === "delivery" && (
+              <div className="text-sm space-y-1">
+                {shipmentDetails.handlingUnits && (
+                  <div>
+                    <span className="font-medium">Handling units:</span> {shipmentDetails.handlingUnits}
+                  </div>
+                )}
+                {shipmentDetails.weight && (
+                  <div>
+                    <span className="font-medium">Weight:</span> {shipmentDetails.weight}
+                  </div>
+                )}
+                {shipmentDetails.freightDescription && (
+                  <div>
+                    <span className="font-medium">Freight description:</span>{" "}
+                    {shipmentDetails.freightDescription}
+                  </div>
+                )}
+                {shipmentDetails.deliveryService && (
+                  <div>
+                    <span className="font-medium">Delivery service:</span>{" "}
+                    <span className="uppercase text-green-600 font-medium">
+                      {shipmentDetails.deliveryService}
+                    </span>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         </div>
       </CardContent>
