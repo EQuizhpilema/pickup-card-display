@@ -1,4 +1,3 @@
-
 import React from "react";
 import PickupCard from "@/components/PickupCard";
 import { Button } from "@/components/ui/button";
@@ -41,7 +40,8 @@ const Index = () => {
           shipmentDetails={{
             units: totalHandlingUnits,
             weight: totalWeight,
-            specialInstructions: "Combined deliveries to Christie's, Sotheby's, and Phillips"
+            combinedDeliveriesNote: "Combined deliveries to Christie's, Sotheby's and Phillips",
+            specialInstructions: ""
           }}
         />
         

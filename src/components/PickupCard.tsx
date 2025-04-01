@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Clock, MapPin, User, Phone, Package, Info } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -33,6 +32,7 @@ interface ShipmentDetails {
   freightDescription?: string;
   specialInstructions?: string;
   deliveryService?: string;
+  combinedDeliveriesNote?: string;
 }
 
 interface PickupCardProps {
@@ -150,6 +150,12 @@ const PickupCard: React.FC<PickupCardProps> = ({
                     <div>
                       <span className="font-medium">Freight description:</span>{" "}
                       {shipmentDetails.freightDescription}
+                    </div>
+                  )}
+                  {shipmentDetails.combinedDeliveriesNote && (
+                    <div>
+                      <span className="font-medium">Combined deliveries:</span>{" "}
+                      {shipmentDetails.combinedDeliveriesNote}
                     </div>
                   )}
                   {shipmentDetails.specialInstructions && (
