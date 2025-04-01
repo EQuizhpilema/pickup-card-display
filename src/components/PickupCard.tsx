@@ -59,12 +59,12 @@ const PickupCard: React.FC<PickupCardProps> = ({
       <CardHeader className="pb-2">
         <CardTitle className="flex items-center text-lg font-medium">
           {type === "pickup" ? (
-            <span className="flex items-center">
-              <Package className="mr-2 h-5 w-5" /> Pickup Details {id && `${id}`}
+            <span>
+              Pickup Details {id && `${id}`}
             </span>
           ) : (
-            <span className="flex items-center">
-              <Package className="mr-2 h-5 w-5" /> Delivery details: {destination}
+            <span>
+              Delivery Details: {destination}
             </span>
           )}
         </CardTitle>

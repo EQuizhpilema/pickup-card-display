@@ -73,9 +73,55 @@ const Index = () => {
           }}
         />
         
+        <PickupCard
+          type="delivery"
+          destination="Sotheby's NY"
+          location={{
+            title: "Sotheby's",
+            address1: "1334 York Avenue",
+            address2: "",
+            city: "New York",
+            state: "NY",
+            zip: "10021"
+          }}
+          contact={{
+            name: "",
+            phone: "(212) 606-7000"
+          }}
+          shipmentDetails={{
+            handlingUnits: 1,
+            weight: 175,
+            freightDescription: "Wooden Box",
+            deliveryService: "Standard service"
+          }}
+        />
+        
+        <PickupCard
+          type="delivery"
+          destination="Phillips De Pury in NY"
+          location={{
+            title: "Phillips De Pury",
+            address1: "450 Park Avenue",
+            address2: "",
+            city: "New York",
+            state: "NY",
+            zip: "10022"
+          }}
+          contact={{
+            name: "",
+            phone: "(212) 940-1200"
+          }}
+          shipmentDetails={{
+            handlingUnits: 3,
+            weight: 320,
+            freightDescription: "Art Packaging",
+            deliveryService: "Premium service"
+          }}
+        />
+        
         <div className="flex justify-center mt-6">
           <Button 
-            variant="primary" 
+            variant="default" 
             className="bg-blue-600 text-white hover:bg-blue-700 rounded-full px-6 py-2"
           >
             Enter another pickup <ArrowRight className="ml-2 h-4 w-4" />
