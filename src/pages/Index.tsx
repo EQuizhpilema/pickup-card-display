@@ -1,3 +1,4 @@
+
 import React from "react";
 import PickupCard from "@/components/PickupCard";
 import { Button } from "@/components/ui/button";
@@ -11,12 +12,12 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gray-100">
       <header className="bg-white border-b">
-        <div className="max-w-4xl mx-auto py-4 px-4 sm:px-6">
+        <div className="max-w-2xl mx-auto py-4 px-4 sm:px-6">
           <h1 className="text-xl font-semibold text-center text-gray-800">Pickup Details</h1>
         </div>
       </header>
 
-      <div className="max-w-4xl mx-auto py-6 px-4 sm:px-6">
+      <div className="max-w-2xl mx-auto py-6 px-4 sm:px-6">
         <PickupCard
           type="pickup"
           id="PU12716"
@@ -137,3 +138,4 @@ const Index = () => {
 };
 
 export default Index;
+
