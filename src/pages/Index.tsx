@@ -1,8 +1,9 @@
 
 import React from "react";
 import PickupCard from "@/components/PickupCard";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import Header from "@/components/Header";
+import SubscribeButton from "@/components/SubscribeButton";
+import NewPickupButton from "@/components/NewPickupButton";
 
 const Index = () => {
   // Calculate totals from all deliveries
@@ -11,11 +12,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <header className="bg-white border-b">
-        <div className="max-w-2xl mx-auto py-4 px-4 sm:px-6">
-          <h1 className="text-xl font-semibold text-center text-gray-800">Pickup Details</h1>
-        </div>
-      </header>
+      <Header title="Pickup Details" />
 
       <div className="max-w-2xl mx-auto py-6 px-4 sm:px-6">
         <PickupCard
@@ -46,14 +43,7 @@ const Index = () => {
           }}
         />
         
-        <div className="flex justify-center my-4">
-          <Button 
-            variant="secondary" 
-            className="bg-blue-600 text-white hover:bg-blue-700 rounded-full px-6 py-2"
-          >
-            <span className="mr-2">Subscribe to alerts</span>
-          </Button>
-        </div>
+        <SubscribeButton />
         
         <PickupCard
           type="delivery"
@@ -124,18 +114,10 @@ const Index = () => {
           }}
         />
         
-        <div className="flex justify-center mt-6">
-          <Button 
-            variant="default" 
-            className="bg-blue-600 text-white hover:bg-blue-700 rounded-full px-6 py-2"
-          >
-            Enter another pickup <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
-        </div>
+        <NewPickupButton />
       </div>
     </div>
   );
 };
 
 export default Index;
-
