@@ -7,7 +7,7 @@ const NewPickupButton: React.FC = () => {
   return (
     <div className="flex justify-center mt-6">
       <Button 
-        className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-6 py-2"
+        className="bg-[#1E90FF] hover:bg-[#4169E1] text-white rounded-full px-6 py-2"
       >
         <Plus className="mr-1 h-4 w-4" />
         Enter another pickup 
