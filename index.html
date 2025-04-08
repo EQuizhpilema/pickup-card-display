@@ -1,15 +1,326 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pickup Details</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pickup Details</title>
+  <meta name="description" content="Pickup and Delivery Details">
+  
+  <!-- MDB Bootstrap Pro CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .card {
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    }
+    .btn-floating {
+      border-radius: 50%;
+      width: 36.15px;
+      height: 36.15px;
+    }
+    .btn-rounded {
+      border-radius: 10em;
+    }
+  </style>
+</head>
+<body>
+  <header class="bg-white border-bottom">
+    <div class="container py-4">
+      <h1 class="text-center fs-4 fw-semibold">Pickup Details</h1>
+    </div>
+  </header>
+
+  <div class="container py-4">
+    <!-- Pickup Card -->
+    <div class="card mb-4">
+      <div class="card-header pb-2">
+        <h5 class="card-title mb-0">
+          Pickup Details PU12716
+        </h5>
+      </div>
+      <hr class="my-0">
+      <div class="card-body pt-4">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="mb-4">
+              <div class="d-flex align-items-start">
+                <i class="far fa-clock me-2 text-muted mt-1"></i>
+                <div>
+                  <div class="fw-medium">Pickup schedule</div>
+                  <div class="small text-muted">
+                    03/21/25 between 10:00 and 11:30
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <div class="d-flex align-items-start">
+                <i class="fas fa-map-marker-alt me-2 text-muted mt-1"></i>
+                <div>
+                  <div class="fw-medium">Pickup from location</div>
+                  <div class="small text-muted">
+                    <div class="text-primary">Ossining High School - SBHC</div>
+                    <div>29 S Highland Ave</div>
+                    <div>Ossining, NY 10562</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <div class="d-flex align-items-start">
+                <i class="fas fa-user me-2 text-muted mt-1"></i>
+                <div>
+                  <div class="fw-medium">Contact</div>
+                  <div class="small text-muted">
+                    <div>Mrs. Glick</div>
+                    <div class="text-primary">(914) 923-4740</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn btn-outline-primary btn-sm" style="background: #e6f0ff;">
+              <i class="fas fa-phone me-2"></i> Add to address book
+            </button>
+          </div>
+
+          <div class="col-md-6">
+            <div>
+              <div class="fw-medium">Shipment details</div>
+              <div class="small">
+                <div>
+                  <span class="fw-medium">Total units:</span> 6
+                </div>
+                <div>
+                  <span class="fw-medium">Total weight:</span> 745
+                </div>
+                <div>
+                  Combined deliveries to Christie's, Sotheby's and Phillips
+                </div>
+                <div class="fw-bold mt-2">Special Pickup Instructions</div>
+                <div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="d-flex justify-content-center my-4">
+      <button class="btn btn-primary btn-rounded px-4">
+        <span class="me-2">Subscribe to alerts</span>
+      </button>
+    </div>
+
+    <!-- Christie's Delivery Card -->
+    <div class="card mb-4">
+      <div class="card-header pb-2">
+        <h5 class="card-title mb-0">
+          Delivery Details: Christie's New York
+        </h5>
+      </div>
+      <hr class="my-0">
+      <div class="card-body pt-4">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="mb-4">
+              <div class="d-flex align-items-start">
+                <i class="fas fa-map-marker-alt me-2 text-muted mt-1"></i>
+                <div>
+                  <div class="fw-medium">Deliver to location</div>
+                  <div class="small text-muted">
+                    <div class="text-primary">Christie's New York</div>
+                    <div>20 Rockefeller Plaza</div>
+                    <div>New York, NY 10020</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <div class="d-flex align-items-start">
+                <i class="fas fa-user me-2 text-muted mt-1"></i>
+                <div>
+                  <div class="fw-medium">Contact</div>
+                  <div class="small text-muted">
+                    <div class="text-primary">(212) 636-2000</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div>
+              <div class="fw-medium">Shipment details</div>
+              <div class="small">
+                <div>
+                  <span class="fw-medium">Handling units:</span> 2
+                </div>
+                <div>
+                  <span class="fw-medium">Weight:</span> 250
+                </div>
+                <div>
+                  <span class="fw-medium">Freight description:</span> Crate
+                </div>
+                <div>
+                  <span class="fw-medium">Delivery service:</span> 
+                  <span class="text-success text-uppercase fw-medium">Guaranteed service</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sotheby's Delivery Card -->
+    <div class="card mb-4">
+      <div class="card-header pb-2">
+        <h5 class="card-title mb-0">
+          Delivery Details: Sotheby's NY
+        </h5>
+      </div>
+      <hr class="my-0">
+      <div class="card-body pt-4">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="mb-4">
+              <div class="d-flex align-items-start">
+                <i class="fas fa-map-marker-alt me-2 text-muted mt-1"></i>
+                <div>
+                  <div class="fw-medium">Deliver to location</div>
+                  <div class="small text-muted">
+                    <div class="text-primary">Sotheby's</div>
+                    <div>1334 York Avenue</div>
+                    <div>New York, NY 10021</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <div class="d-flex align-items-start">
+                <i class="fas fa-user me-2 text-muted mt-1"></i>
+                <div>
+                  <div class="fw-medium">Contact</div>
+                  <div class="small text-muted">
+                    <div class="text-primary">(212) 606-7000</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div>
+              <div class="fw-medium">Shipment details</div>
+              <div class="small">
+                <div>
+                  <span class="fw-medium">Handling units:</span> 1
+                </div>
+                <div>
+                  <span class="fw-medium">Weight:</span> 175
+                </div>
+                <div>
+                  <span class="fw-medium">Freight description:</span> Wooden Box
+                </div>
+                <div>
+                  <span class="fw-medium">Delivery service:</span> 
+                  <span class="text-success text-uppercase fw-medium">Standard service</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phillips Delivery Card -->
+    <div class="card mb-4">
+      <div class="card-header pb-2">
+        <h5 class="card-title mb-0">
+          Delivery Details: Phillips De Pury in NY
+        </h5>
+      </div>
+      <hr class="my-0">
+      <div class="card-body pt-4">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="mb-4">
+              <div class="d-flex align-items-start">
+                <i class="fas fa-map-marker-alt me-2 text-muted mt-1"></i>
+                <div>
+                  <div class="fw-medium">Deliver to location</div>
+                  <div class="small text-muted">
+                    <div class="text-primary">Phillips De Pury</div>
+                    <div>450 Park Avenue</div>
+                    <div>New York, NY 10022</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <div class="d-flex align-items-start">
+                <i class="fas fa-user me-2 text-muted mt-1"></i>
+                <div>
+                  <div class="fw-medium">Contact</div>
+                  <div class="small text-muted">
+                    <div class="text-primary">(212) 940-1200</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div>
+              <div class="fw-medium">Shipment details</div>
+              <div class="small">
+                <div>
+                  <span class="fw-medium">Handling units:</span> 3
+                </div>
+                <div>
+                  <span class="fw-medium">Weight:</span> 320
+                </div>
+                <div>
+                  <span class="fw-medium">Freight description:</span> Art Packaging
+                </div>
+                <div>
+                  <span class="fw-medium">Delivery service:</span> 
+                  <span class="text-success text-uppercase fw-medium">Premium service</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="d-flex justify-content-center mt-4">
+      <button class="btn btn-primary btn-rounded px-4">
+        Enter another pickup <i class="fas fa-arrow-right ms-2"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- MDB Bootstrap Pro JS -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
+  <script>
+    // Any additional JavaScript functionality can be added here
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('Page loaded successfully');
+    });
+  </script>
+</body>
 </html>
