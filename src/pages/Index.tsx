@@ -1,9 +1,10 @@
 
 import React from "react";
-import PickupCard from "@/components/PickupCard";
 import Header from "@/components/Header";
 import SubscribeButton from "@/components/SubscribeButton";
 import NewPickupButton from "@/components/NewPickupButton";
+import PickupInfoCard from "@/components/PickupInfoCard";
+import DeliveryCardsContainer from "@/components/DeliveryCardsContainer";
 
 const Index = () => {
   // Calculate totals from all deliveries
@@ -15,8 +16,7 @@ const Index = () => {
       <Header title="Pickup Details" />
 
       <div className="max-w-2xl mx-auto py-6 px-4 sm:px-6">
-        <PickupCard
-          type="pickup"
+        <PickupInfoCard
           id="PU12716"
           location={{
             title: "Ossining High School - SBHC",
@@ -45,74 +45,7 @@ const Index = () => {
         
         <SubscribeButton />
         
-        <PickupCard
-          type="delivery"
-          destination="Christie's New York"
-          location={{
-            title: "Christie's New York",
-            address1: "20 Rockefeller Plaza",
-            address2: "",
-            city: "New York",
-            state: "NY",
-            zip: "10020"
-          }}
-          contact={{
-            name: "",
-            phone: "(212) 636-2000"
-          }}
-          shipmentDetails={{
-            handlingUnits: 2,
-            weight: 250,
-            freightDescription: "Crate",
-            deliveryService: "Guaranteed service"
-          }}
-        />
-        
-        <PickupCard
-          type="delivery"
-          destination="Sotheby's NY"
-          location={{
-            title: "Sotheby's",
-            address1: "1334 York Avenue",
-            address2: "",
-            city: "New York",
-            state: "NY",
-            zip: "10021"
-          }}
-          contact={{
-            name: "",
-            phone: "(212) 606-7000"
-          }}
-          shipmentDetails={{
-            handlingUnits: 1,
-            weight: 175,
-            freightDescription: "Wooden Box",
-            deliveryService: "Standard service"
-          }}
-        />
-        
-        <PickupCard
-          type="delivery"
-          destination="Phillips De Pury in NY"
-          location={{
-            title: "Phillips De Pury",
-            address1: "450 Park Avenue",
-            address2: "",
-            city: "New York",
-            state: "NY",
-            zip: "10022"
-          }}
-          contact={{
-            name: "",
-            phone: "(212) 940-1200"
-          }}
-          shipmentDetails={{
-            handlingUnits: 3,
-            weight: 320,
-            freightDescription: "Art Packaging",
-            deliveryService: "Premium service"
-          }}
-        />
+        <DeliveryCardsContainer />
         
         <NewPickupButton />
       </div>
