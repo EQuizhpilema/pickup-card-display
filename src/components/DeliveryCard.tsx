@@ -67,6 +67,9 @@ const DeliveryCard: React.FC<DeliveryCardProps> = ({
                   <span className="fw-medium">Delivery service:</span> 
                   <span className="text-success text-uppercase fw-medium">{shipmentDetails.deliveryService}</span>
                 </div>
+                
+                <div className="mb-2"></div>
+                
                 <div>
                   <span className="fw-medium">Terminal:</span> PDX
                 </div>
