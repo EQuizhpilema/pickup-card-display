@@ -103,6 +103,15 @@ const PickupInfoCard: React.FC<PickupInfoCardProps> = ({
                 <div>
                   {shipmentDetails.combinedDeliveriesNote}
                 </div>
+                <div className="mt-3">
+                  <span className="fw-medium">Shipper Ref #:</span> CO-8007
+                </div>
+                <div>
+                  <span className="fw-medium">Terminal:</span> BOI
+                </div>
+                <div>
+                  <span className="fw-medium">Requested Date:</span> 03/15/2025
+                </div>
                 <div className="fw-bold mt-2">Special Pickup Instructions</div>
                 <div>{shipmentDetails.specialInstructions}</div>
               </div>
