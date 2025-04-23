@@ -1,4 +1,3 @@
-
 import React from "react";
 
 interface PickupInfoCardProps {
@@ -99,7 +98,7 @@ const PickupInfoCard: React.FC<PickupInfoCardProps> = ({
                   <span className="fw-medium">Total units:</span> {shipmentDetails.units}
                 </div>
                 <div>
-                  <span className="fw-medium">Total weight:</span> {shipmentDetails.weight}
+                  <span className="fw-medium">Total weight:</span> {shipmentDetails.weight} lbs
                 </div>
                 <div>
                   {shipmentDetails.combinedDeliveriesNote}

@@ -1,4 +1,3 @@
-
 import React from "react";
 import LocationInfo from "./LocationInfo";
 import ContactInfo from "./ContactInfo";
@@ -59,7 +58,7 @@ const DeliveryCard: React.FC<DeliveryCardProps> = ({
                   <span className="fw-medium">Handling units:</span> {shipmentDetails.handlingUnits}
                 </div>
                 <div>
-                  <span className="fw-medium">Weight:</span> {shipmentDetails.weight}
+                  <span className="fw-medium">Weight:</span> {shipmentDetails.weight} lbs
                 </div>
                 <div>
                   <span className="fw-medium">Freight description:</span> {shipmentDetails.freightDescription}
