@@ -1,3 +1,4 @@
+
 import React from "react";
 import LocationInfo from "./LocationInfo";
 import ContactInfo from "./ContactInfo";
@@ -77,7 +78,7 @@ const DeliveryCard: React.FC<DeliveryCardProps> = ({
                   <span className="fw-medium">Destination Partner Carrier:</span> Diamond Line
                 </div>
                 <div>
-                  <span className="fw-medium">Delivery Direct Point:</span> YES
+                  <span className="fw-medium">Delivery Direct Point:</span> <span className="text-success">YES</span>
                 </div>
               </div>
             </div>
@@ -89,3 +90,4 @@ const DeliveryCard: React.FC<DeliveryCardProps> = ({
 };
 
 export default DeliveryCard;
+
