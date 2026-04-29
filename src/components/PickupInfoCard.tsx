@@ -1,4 +1,17 @@
 import React from "react";
+import { Button } from "@/components/ui/button";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+import { XCircle } from "lucide-react";
 
 interface PickupInfoCardProps {
   id: string;
@@ -25,6 +38,8 @@ interface PickupInfoCardProps {
     combinedDeliveriesNote: string;
     specialInstructions: string;
   };
+  onCancel?: () => void;
+  emptyDeliveriesWarning?: boolean;
 }
 
 const PickupInfoCard: React.FC<PickupInfoCardProps> = ({
@@ -32,17 +47,55 @@ const PickupInfoCard: React.FC<PickupInfoCardProps> = ({
   location,
   time,
   contact,
-  shipmentDetails
+  shipmentDetails,
+  onCancel,
+  emptyDeliveriesWarning,
 }) => {
   return (
     <div className="card mb-4">
-      <div className="card-header pb-2">
+      <div className="card-header pb-2 d-flex align-items-center justify-content-between">
         <h5 className="card-title mb-0">
           Pickup Details {id}
         </h5>
+        {onCancel && (
+          <AlertDialog>
+            <AlertDialogTrigger asChild>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="rounded-full bg-destructive/10 text-destructive hover:bg-destructive/20 hover:text-destructive px-4"
+              >
+                <XCircle className="mr-1 h-4 w-4" />
+                Cancel pickup
+              </Button>
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>Cancel this pickup?</AlertDialogTitle>
+                <AlertDialogDescription>
+                  This will cancel pickup {id} and remove all associated deliveries. This action can't be undone.
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>Keep pickup</AlertDialogCancel>
+                <AlertDialogAction
+                  onClick={onCancel}
+                  className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+                >
+                  Cancel pickup
+                </AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
+        )}
       </div>
       <hr className="my-0" />
       <div className="card-body pt-4">
+        {emptyDeliveriesWarning && (
+          <div className="mb-3 rounded border border-destructive/30 bg-destructive/10 px-3 py-2 text-sm text-destructive">
+            This pickup has no deliveries. Add a stop or cancel the pickup.
+          </div>
+        )}
         <div className="row">
           <div className="col-md-6">
             <div className="mb-4">
