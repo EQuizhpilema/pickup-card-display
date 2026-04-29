@@ -54,7 +54,7 @@ const DeliveryCard: React.FC<DeliveryCardProps> = ({
         <h5 className="card-title mb-0">
           Delivery Details: {destination}
         </h5>
-        {onRemove && (
+        {onRemove && !isLastStop && (
           <AlertDialog>
             <AlertDialogTrigger asChild>
               <Button
@@ -69,12 +69,10 @@ const DeliveryCard: React.FC<DeliveryCardProps> = ({
             <AlertDialogContent>
               <AlertDialogHeader>
                 <AlertDialogTitle>
-                  {isLastStop ? "Remove the last delivery stop?" : `Remove delivery to ${destination}?`}
+                  Remove delivery to {destination}?
                 </AlertDialogTitle>
                 <AlertDialogDescription>
-                  {isLastStop
-                    ? `${destination} is the only remaining stop. Removing it will cancel pickup PU12716.`
-                    : "This stop will be removed from the pickup and the totals will be recalculated."}
+                  This stop will be removed from the pickup and the totals will be recalculated.
                 </AlertDialogDescription>
               </AlertDialogHeader>
               <AlertDialogFooter>
@@ -83,7 +81,7 @@ const DeliveryCard: React.FC<DeliveryCardProps> = ({
                   onClick={onRemove}
                   className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
                 >
-                  {isLastStop ? "Remove stop & cancel pickup" : "Remove stop"}
+                  Remove stop
                 </AlertDialogAction>
               </AlertDialogFooter>
             </AlertDialogContent>
