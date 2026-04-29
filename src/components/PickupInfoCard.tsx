@@ -39,7 +39,6 @@ interface PickupInfoCardProps {
     specialInstructions: string;
   };
   onCancel?: () => void;
-  emptyDeliveriesWarning?: boolean;
 }
 
 const PickupInfoCard: React.FC<PickupInfoCardProps> = ({
@@ -49,7 +48,6 @@ const PickupInfoCard: React.FC<PickupInfoCardProps> = ({
   contact,
   shipmentDetails,
   onCancel,
-  emptyDeliveriesWarning,
 }) => {
   return (
     <div className="card mb-4">
@@ -91,11 +89,6 @@ const PickupInfoCard: React.FC<PickupInfoCardProps> = ({
       </div>
       <hr className="my-0" />
       <div className="card-body pt-4">
-        {emptyDeliveriesWarning && (
-          <div className="mb-3 rounded border border-destructive/30 bg-destructive/10 px-3 py-2 text-sm text-destructive">
-            This pickup has no deliveries. Add a stop or cancel the pickup.
-          </div>
-        )}
         <div className="row">
           <div className="col-md-6">
             <div className="mb-4">

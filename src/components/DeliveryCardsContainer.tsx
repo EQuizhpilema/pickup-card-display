@@ -37,6 +37,7 @@ const DeliveryCardsContainer: React.FC<Props> = ({ deliveries, onRemove }) => {
           contact={d.contact}
           shipmentDetails={d.shipmentDetails}
           onRemove={() => onRemove(d.id)}
+          isLastStop={deliveries.length === 1}
         />
       ))}
     </>
