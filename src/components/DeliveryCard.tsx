@@ -37,6 +37,7 @@ interface DeliveryCardProps {
     deliveryService: string;
   };
   onRemove?: () => void;
+  isLastStop?: boolean;
 }
 
 const DeliveryCard: React.FC<DeliveryCardProps> = ({
@@ -45,6 +46,7 @@ const DeliveryCard: React.FC<DeliveryCardProps> = ({
   contact,
   shipmentDetails,
   onRemove,
+  isLastStop,
 }) => {
   return (
     <div className="card mb-4">
@@ -66,9 +68,13 @@ const DeliveryCard: React.FC<DeliveryCardProps> = ({
             </AlertDialogTrigger>
             <AlertDialogContent>
               <AlertDialogHeader>
-                <AlertDialogTitle>Remove delivery to {destination}?</AlertDialogTitle>
+                <AlertDialogTitle>
+                  {isLastStop ? "Remove the last delivery stop?" : `Remove delivery to ${destination}?`}
+                </AlertDialogTitle>
                 <AlertDialogDescription>
-                  This stop will be removed from the pickup and the totals will be recalculated.
+                  {isLastStop
+                    ? `${destination} is the only remaining stop. Removing it will cancel pickup PU12716.`
+                    : "This stop will be removed from the pickup and the totals will be recalculated."}
                 </AlertDialogDescription>
               </AlertDialogHeader>
               <AlertDialogFooter>
@@ -77,7 +83,7 @@ const DeliveryCard: React.FC<DeliveryCardProps> = ({
                   onClick={onRemove}
                   className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
                 >
-                  Remove stop
+                  {isLastStop ? "Remove stop & cancel pickup" : "Remove stop"}
                 </AlertDialogAction>
               </AlertDialogFooter>
             </AlertDialogContent>

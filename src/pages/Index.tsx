@@ -44,7 +44,21 @@ const Index = () => {
     const removed = deliveries.find((d) => d.id === id);
     if (!removed) return;
     const prev = deliveries;
+    const wasLast = deliveries.length === 1;
     setDeliveries((curr) => curr.filter((d) => d.id !== id));
+    if (wasLast) {
+      setCanceled(true);
+      toast(`Pickup ${PICKUP_ID} canceled`, {
+        action: {
+          label: "Undo",
+          onClick: () => {
+            setCanceled(false);
+            setDeliveries(prev);
+          },
+        },
+      });
+      return;
+    }
     toast(`Removed ${removed.destination}`, {
       action: { label: "Undo", onClick: () => setDeliveries(prev) },
     });
@@ -106,7 +120,6 @@ const Index = () => {
                 specialInstructions: "",
               }}
               onCancel={handleCancelPickup}
-              emptyDeliveriesWarning={deliveries.length === 0}
             />
 
             <SubscribeButton />
