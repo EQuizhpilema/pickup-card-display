@@ -63,7 +63,7 @@ const DeliveryCard: React.FC<DeliveryCardProps> = ({
                 className="rounded-full text-destructive hover:bg-destructive/10 hover:text-destructive px-3"
               >
                 <Trash2 className="mr-1 h-4 w-4" />
-                Remove stop
+                Remove shipment
               </Button>
             </AlertDialogTrigger>
             <AlertDialogContent>
@@ -72,16 +72,16 @@ const DeliveryCard: React.FC<DeliveryCardProps> = ({
                   Remove delivery to {destination}?
                 </AlertDialogTitle>
                 <AlertDialogDescription>
-                  This stop will be removed from the pickup and the totals will be recalculated.
+                  This shipment will be removed from the pickup and the totals will be recalculated.
                 </AlertDialogDescription>
               </AlertDialogHeader>
               <AlertDialogFooter>
-                <AlertDialogCancel>Keep stop</AlertDialogCancel>
+                <AlertDialogCancel>Keep shipment</AlertDialogCancel>
                 <AlertDialogAction
                   onClick={onRemove}
                   className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
                 >
-                  Remove stop
+                  Remove shipment
                 </AlertDialogAction>
               </AlertDialogFooter>
             </AlertDialogContent>
